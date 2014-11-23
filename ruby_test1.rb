@@ -47,3 +47,26 @@ class Instancevar
 end
 custobj1=Instancevar.new('Kamal','1234','hdjf@djbf')
 custobj1.print_details()
+
+#Below Example is for Class variable
+#Class variable start with @@
+##
+class Testclassvar
+    @@numberofcust=0
+    def initialize(name,number,address)
+        @cust_name=name
+        @cust_number=number
+        @cust_address=address
+    end
+    def total_no_customer()
+        @@numberofcust +=1
+        puts "Total number of customer #@@numberofcust"
+    end
+end
+cust1=Testclassvar.new('kamal','123243','dfdf@dfdf')
+cust2=Testclassvar.new('jass','123243','dfdf@dfdf')
+
+cust1.total_no_customer()
+cust2.total_no_customer()
+
+        
