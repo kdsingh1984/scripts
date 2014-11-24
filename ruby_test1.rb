@@ -71,3 +71,17 @@ cust2.total_no_customer()
 #In above example name,number and address were local variables.
 #Local variabled are either begin with lowercase or _
 #
+#Below defines Ruby constants. They are in caps
+#
+class Testconstant
+    VAR1='kamal'
+    VAR2='jass'
+    def family
+        puts "King is #{VAR1}"
+        puts "Queen is #{VAR2}"
+    end
+end
+
+constantobj1=Testconstant.new
+constantobj1.family()
+       
