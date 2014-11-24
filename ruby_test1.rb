@@ -3,7 +3,7 @@
 #http://www.tutorialspoint.com/ruby/ruby_syntax.htm
 
 END {
-    puts "No more work"
+    puts "\b\n============ No more work==========="
     }
 puts "Hello All"
 BEGIN {
@@ -85,3 +85,27 @@ end
 constantobj1=Testconstant.new
 constantobj1.family()
        
+#You cannot assign any value to these variables
+#self: Receiver object for current method
+#true: value representing true
+#false: value repersenting false
+#nil: value representing undefined
+#__FILE__: The name of the current source file
+#__LINE__: The current line number in the source file
+#
+#For array loop test
+testarray = [ 'usr1', 'usr2' ]
+testarray.each do |i|
+    puts "here is #{i}"
+end
+
+#Ruby hash loop test
+testhash={ 'kamal'=> 30, 'jass'=> 27, 'seeart'=> 1 }
+testhash.each do |key, value|
+    print key," age is ", value, "\n"
+end
+
+#Ruby Range
+(10..15).each do |i|
+    print i," "
+end
