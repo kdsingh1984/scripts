@@ -68,5 +68,6 @@ cust2=Testclassvar.new('jass','123243','dfdf@dfdf')
 
 cust1.total_no_customer()
 cust2.total_no_customer()
-
-        
+#In above example name,number and address were local variables.
+#Local variabled are either begin with lowercase or _
+#
