@@ -107,5 +107,18 @@ end
 
 #Ruby Range
 (10..15).each do |i|
-    print i," "
+    print i,"\n"
 end
+
+#Ruby Range creater
+# .. -> create range with start and end number, 1..10 is range from 1 to 10
+# ... -> create range excluding ending number, 1...10 is range from 1 to 9
+# 
+# Ruby defined operator
+# It is used to check if variable, method etc exists. it return nil incase it wont exists.
+# 
+# Ruby dot '.' and double colon '::' Operators
+# dot '.' is used for calling method of module
+# double colons '::' is used for calling constant from class 
+# 
+puts Testconstant::VAR1
