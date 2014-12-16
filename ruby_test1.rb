@@ -217,5 +217,54 @@ end
 Testmodule.method1('kamal','jass')
 puts "constant in Testmodule is #{Testmodule::VAR1}"
 
-#require: it is same like include in python
+#require: Load the module files, you need to define search directory
+#$LOAD_PATH << '.' <-- It is telling to search in current directory.
+#Otherwise you have to use require_relative to include files from relative directory.
+#reuire filename
+$LOAD_PATH << '.'
+require "support"
+
+Week.days_in_week
+
+#General delimited strings
+#%{Ruby is fun.}  equivalent to "Ruby is fun."
+#%Q{ Ruby is fun. } equivalent to " Ruby is fun. "
+#%q[Ruby is fun.]  equivalent to a single-quoted string
+#%x!ls! equivalent to back tick command output `ls`
+
+
+# IO Files (IO is class and it has many method one of those is file)
+# example
+for lines in File.open('./test_file');
+    puts lines
+end
+write_file=File.open('./test_file','a')
+write_file.syswrite("Second time writing into file")
+
+IO.readlines('./test_file')
+#File.rename
+#File.delete
+#File.chmod
+#File Inquaries
+#File.exists?('filepath'), File.readable?(file), File.executable?(file), File.zero?(file), File.size?(file)
+#Dir.chdir('dir'), etc
 #
+#To find list of all the methods of any class
+#Class.methods
+#
+#Ruby Exception Handling
+#It happens between begin and end code
+#rescue: incase of exception raised after begin. Then exceution jump to code between rescue and end.
+#raise: if you want to raise exception under certain condition. use just "raise". it will force execution move #to rescue .. end.
+#else: it is after all rescue statements. when your rescue have exception defined.
+#retry: it will shift pointer back to begin
+begin
+    print "Enter the code :"
+    code = gets
+    if code.length < 2
+        raise
+    end
+rescue
+    puts "You cannot leave code empty"
+    retry
+end
