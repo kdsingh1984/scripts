@@ -1,5 +1,5 @@
 #!/usr/bin/python -tt
-import sys,socket,getopt
+import sys,socket,getopt,subprocess
 def subnet_2_maskbit(subnet):
   host_network_bit=[]
   binary_str=""
@@ -66,6 +66,10 @@ def get_ip_list(network,subnet):
   ip_list.pop(0)
   ip_list.pop()
   return ip_list
+
+def ping_test(ip):
+    output=subprocess.check_call('print -c1 -t1 '+ip,stdout=subprocess.PIPE,shell=True)
+    return output    
 
 def usage():
   print sys.argv[0] +": -s subnet"
